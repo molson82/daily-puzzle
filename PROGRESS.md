@@ -26,4 +26,7 @@ jumps a tier; a loss drops ELO only slightly.
 
 | Date | Puzzle | Difficulty / Tier | Result | Grade | ELO Δ | New ELO |
 | ---- | ------ | ----------------- | ------ | ----- | ----- | ------- |
-| _(no puzzles graded yet)_ | | | | | | |
+| 2026-06-24 | Digital Root Sum | Bronze (ELO 800) | GENERATED | — | 0 | 800 |
+
+_First run: no prior puzzle to grade. Baseline established at ELO 800 (Bronze).
+Generated the first puzzle "Digital Root Sum"; it will be graded on the next run._
