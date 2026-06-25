@@ -25,7 +25,7 @@ func TestDigitalRootSum(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := digitalRootSum(tt.input); got != tt.want {
+			if got := digitalRootSumActive(tt.input); got != tt.want {
 				t.Errorf("digitalRootSum(%q) = %d, want %d", tt.input, got, tt.want)
 			}
 		})
@@ -37,7 +37,7 @@ func TestDigitalRootSumSampleFile(t *testing.T) {
 	if err != nil {
 		t.Fatalf("reading sample.txt: %v", err)
 	}
-	if got, want := digitalRootSum(string(data)), 15; got != want {
+	if got, want := digitalRootSumActive(string(data)), 15; got != want {
 		t.Errorf("digitalRootSum(sample.txt) = %d, want %d", got, want)
 	}
 }

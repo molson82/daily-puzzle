@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"strconv"
@@ -48,11 +49,25 @@ func digitalRoot(input string) int {
 	return digitalRoot(strconv.Itoa(ans))
 }
 
+// solver selects which implementation runs. -solver=ref uses the A-grade
+// reference (reference.go); the default uses my solution above. The test suite
+// reads the same flag, so `go test -solver=ref` runs every unit test through
+// the reference instead.
+var solver = flag.String("solver", "mine", `which solution to run: "mine" or "ref"`)
+
+func digitalRootSumActive(input string) int {
+	if *solver == "ref" {
+		return digitalRootSumRef(input)
+	}
+	return digitalRootSum(input)
+}
+
 func main() {
+	flag.Parse()
 	data, err := os.ReadFile("input.txt")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "error reading input.txt:", err)
 		os.Exit(1)
 	}
-	fmt.Println(digitalRootSum(string(data)))
+	fmt.Println(digitalRootSumActive(string(data)))
 }
