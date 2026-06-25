@@ -1,0 +1,27 @@
+()
+[]
+{}
+([])
+([)]
+{[()]}
+(((
+)))
+a(b)c[d]{e}
+func main() { x := arr[0] }
+if (a && (b || c)) { return }
+{[(])}
+empty line follows
+
+no brackets at all
+())(
+[{}]({})
+}{
+(unbalanced
+balanced)(again
+{[()()()]}
+data := map[string]int{"a": (1 + 2)}
+((([[[{{{}}}]]])))
+((([[[{{{}}}]]])))]
+nested: [a[b[c]d]e]
+mismatch: (]
+plain text line
