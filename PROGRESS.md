@@ -42,6 +42,8 @@ puzzles; a loss only nudges you down.
 | 2026-06-24 | Digital Root Sum | Bronze (ELO 800) | GENERATED | — | 0 | 800 |
 | 2026-06-25 | Digital Root Sum | Bronze (ELO 800) | WIN | B+ | +30 | 830 |
 | 2026-06-25 | Balanced Brackets | Bronze (ELO 830) | GENERATED | — | 0 | 830 |
+| 2026-06-26 | Balanced Brackets | Bronze (ELO 830) | SKIPPED | — | 0 | 830 |
+| 2026-06-26 | Run-Length Encoding | Bronze (ELO 830) | GENERATED | — | 0 | 830 |
 
 ### 2026-06-25 — Digital Root Sum (graded), grade B+
 
@@ -62,3 +64,12 @@ improve, in priority order:
 
 Net: a solid, correct Bronze solution; the deductions are about idiom and
 efficiency, not correctness. Hence B+ (factor 0.75 → +30 ELO).
+
+### 2026-06-26 — Balanced Brackets, SKIPPED
+
+`cmd/2026/06/25/main.go` was still the untouched stub (`// TODO: implement`,
+`countBalanced` returning 0 and `isBalanced` returning false), so the puzzle was
+unsolved. Per the routine this is neutral: no audit, no grade, ELO unchanged at
+830 (Bronze). The Balanced Brackets puzzle stays on the board if you want to
+come back to it — a classic stack problem: push openers, pop and match on
+closers, reject on mismatch or leftover openers at the end.
