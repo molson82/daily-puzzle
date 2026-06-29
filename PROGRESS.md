@@ -42,8 +42,13 @@ puzzles; a loss only nudges you down.
 | 2026-06-24 | Digital Root Sum | Bronze (ELO 800) | GENERATED | — | 0 | 800 |
 | 2026-06-25 | Digital Root Sum | Bronze (ELO 800) | WIN | B+ | +30 | 830 |
 | 2026-06-25 | Balanced Brackets | Bronze (ELO 830) | GENERATED | — | 0 | 830 |
+<<<<<<< HEAD
 | 2026-06-26 | Balanced Brackets | Bronze (ELO 830) | SKIPPED | — | 0 | 830 |
 | 2026-06-26 | Run-Length Encoding | Bronze (ELO 830) | GENERATED | — | 0 | 830 |
+=======
+| 2026-06-27 | Balanced Brackets | Bronze (ELO 830) | SKIPPED | — | 0 | 830 |
+| 2026-06-27 | Warehouse Shelves | Bronze (ELO 830) | GENERATED | — | 0 | 830 |
+>>>>>>> origin/claude/youthful-maxwell-k163yl
 
 ### 2026-06-25 — Digital Root Sum (graded), grade B+
 
@@ -65,6 +70,7 @@ improve, in priority order:
 Net: a solid, correct Bronze solution; the deductions are about idiom and
 efficiency, not correctness. Hence B+ (factor 0.75 → +30 ELO).
 
+<<<<<<< HEAD
 ### 2026-06-26 — Balanced Brackets, SKIPPED
 
 `cmd/2026/06/25/main.go` was still the untouched stub (`// TODO: implement`,
@@ -73,3 +79,23 @@ unsolved. Per the routine this is neutral: no audit, no grade, ELO unchanged at
 830 (Bronze). The Balanced Brackets puzzle stays on the board if you want to
 come back to it — a classic stack problem: push openers, pop and match on
 closers, reject on mismatch or leftover openers at the end.
+=======
+### 2026-06-27 — Balanced Brackets (skipped)
+
+`cmd/2026/06/25/main.go` was left as the generated stub (`countBalanced`
+returns 0, `isBalanced` returns false), so there was nothing to grade. Per the
+routine, an unsolved puzzle is neutral: no ELO change. ELO stays 830, Bronze.
+
+Side note: the "reference solution for june 25" commit added a learning
+`reference.go` for the *already-graded* 06/24 Digital Root Sum puzzle (folding
+in the prior feedback — `r - '0'`, the closed-form digital root, and the
+mod-9 trick to stay overflow-proof). Nice follow-up, but it didn't touch the
+06/25 puzzle, which remains open. If you want a grade for Balanced Brackets,
+fill in its stub and it'll be picked up next run.
+
+For reference, the idiomatic shape: scan runes, push the *expected closer* on a
+stack for each opener (`( → )`, `[ → ]`, `{ → }`), and on a closer pop and
+compare. Balanced ⇔ every closer matches the top and the stack is empty at the
+end. Non-bracket runes are ignored. A `map[rune]rune` of opener→closer keeps it
+tidy; a `[]rune` slice is a perfectly good stack.
+>>>>>>> origin/claude/youthful-maxwell-k163yl
